@@ -1,0 +1,24 @@
+footer,
+.rThree  {
+    z-index: 2;
+}
+
+.moon {
+    z-index: 1;
+}
+
+.countdown {
+    z-index: 0;
+}
+
+.lThree{
+    z-index: -1;
+}
+
+.moon::before{
+    z-index: 1;
+}
+
+body::after {
+    z-index: -3;
+}

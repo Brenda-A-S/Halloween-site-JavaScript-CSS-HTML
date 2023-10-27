@@ -28,7 +28,6 @@
     left: var(--half-percent);
     transform: scale(.5);
     cursor: pointer;
-    z-index: 0;
 }
 
 .moon::after{
@@ -55,6 +54,7 @@
     left: 0;
     border-radius: var(--half-percent);
     opacity: 0;
+    z-index: 1;
 }
 
 .moon:hover::before {

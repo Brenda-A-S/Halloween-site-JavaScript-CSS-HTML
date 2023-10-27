@@ -32,7 +32,6 @@ body::after {
     background: url(../imgs/estrelas.svg);
     width: var(--hundred-percent);
     height: var(--hundred-percent);
-    z-index: -3;
 }
 
 main {
@@ -55,7 +54,6 @@ footer {
     color: #353535;
     font-family: Ruluko;
     font-size: 1rem;
-    z-index: 1;
     text-transform: lowercase;
     text-decoration: underline;
 }

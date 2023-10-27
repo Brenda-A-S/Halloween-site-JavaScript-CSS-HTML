@@ -17,7 +17,6 @@
     place-content: center;
     place-items: center;
     gap: 4rem;
-    z-index: 1;
 }
 
 .countdown li {
