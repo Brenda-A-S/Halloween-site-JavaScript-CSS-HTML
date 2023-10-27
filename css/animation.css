@@ -1,7 +1,8 @@
 @keyframes fade {
-    from{
+    from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -10,19 +11,22 @@
 .rThree,
 .lThree,
 .moon,
-main::before{
+main::before,
+.container-countdown {
     animation: fade 3s;
 }
 
 @keyframes countdown-animation {
     0% {
-transform: translateY(0);
+        transform: translateY(0);
     }
+
     50% {
-transform: translateY(-2%);
+        transform: translateY(-2%);
     }
+
     100% {
-transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -31,27 +35,29 @@ transform: translateY(0);
 }
 
 .container-countdown li:nth-child(2) {
-   animation-delay: .2s;
+    animation-delay: .2s;
 }
 
 .container-countdown li:nth-child(3) {
-   animation-delay: .4s;
+    animation-delay: .4s;
 }
 
 .container-countdown li:nth-child(4) {
-   animation-delay: .6s;
+    animation-delay: .6s;
 }
 
 @keyframes bg {
     0% {
         opacity: 0.4;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: 0.4;
-    }        
+    }
 }
 
 body::after {
@@ -59,13 +65,15 @@ body::after {
 }
 
 @keyframes brilho {
-    0%{
+    0% {
         opacity: .7;
     }
-    50%{
+
+    50% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: .7;
     }
 }
