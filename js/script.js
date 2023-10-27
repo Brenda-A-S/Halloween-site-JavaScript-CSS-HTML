@@ -1,6 +1,6 @@
-import Countdown from './modules/countdown.js';
+import Countdown from './modules/countdown.js'
 
-const halloweenTime = new Countdown('30 October 2023 23:59:59 GMT-0300')
+const halloweenTime = new Countdown('31 October 2023 00:00:00 GMT-0300')
 
 function updateCountdown() {
     const units = {
@@ -10,21 +10,21 @@ function updateCountdown() {
         seconds: 'segundo'
     }
     function formatTime(number, unit) {
-        const unitString = number === 1 ? unit : unit + 's';
-        return `${number} <span class="subtitle">${unitString}</span>`;
+        const unitString = number === 1 ? unit : unit + 's'
+        return `${number} <span class="subtitle">${unitString}</span>`
     }
-    const daysElement = document.querySelector('.days');
-    const hoursElement = document.querySelector('.hours');
-    const minutesElement = document.querySelector('.minute');
-    const secondsElement = document.querySelector('.second');
-    daysElement.innerHTML = formatTime(halloweenTime.total.days, units.days);
-    hoursElement.innerHTML = formatTime(halloweenTime.total.hours, units.hours);
-    minutesElement.innerHTML = formatTime(halloweenTime.total.minutes, units.minutes);
-    secondsElement.innerHTML = formatTime(halloweenTime.total.seconds, units.seconds);
+    const daysElement = document.querySelector('.days')
+    const hoursElement = document.querySelector('.hours')
+    const minutesElement = document.querySelector('.minute')
+    const secondsElement = document.querySelector('.second')
+    daysElement.innerHTML = formatTime(halloweenTime.total.days, units.days)
+    hoursElement.innerHTML = formatTime(halloweenTime.total.hours, units.hours)
+    minutesElement.innerHTML = formatTime(halloweenTime.total.minutes, units.minutes)
+    secondsElement.innerHTML = formatTime(halloweenTime.total.seconds, units.seconds)
 }
 
-updateCountdown();
+updateCountdown()
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 1000)
 
 

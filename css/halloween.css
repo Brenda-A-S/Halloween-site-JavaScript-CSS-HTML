@@ -1,7 +1,7 @@
 .lThree,
 .rThree {
     position: absolute;
-    height: 100%;
+    height: var(--hundred-percent);
     top: 0;
 }
 
@@ -15,7 +15,6 @@
 
 .lThree {
     left: 0;
-    z-index: -1;
 }
 
 .rThree {
@@ -26,36 +25,35 @@
     position: absolute;
     margin: auto;
     top: .5rem;
-    left: 50%;
-    z-index: 0;
+    left: var(--half-percent);
     transform: scale(.5);
     cursor: pointer;
+    z-index: 0;
 }
 
 .moon::after{
     content: '';
     position: absolute;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    width: var(--glow);
+    height: var(--glow);
     background-color: white;
     top: -2px;
     left: -2px;
     filter: blur(100px);
-    z-index: -1;
 }
 
 .moon::before{
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: var(--hundred-percent);
+    height: var(--hundred-percent);
     background: url(../imgs/ghost.svg);
-    background-size: 80%;
+    background-size: var(--eighty-percent);
     background-position: center;
     background-repeat: no-repeat;
     top: 0;
     left: 0;
-    border-radius: 50%;
+    border-radius: var(--half-percent);
     opacity: 0;
 }
 
