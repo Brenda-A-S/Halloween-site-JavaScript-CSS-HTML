@@ -1,0 +1,179 @@
+.container-countdown,
+.countdown {
+    height: 100%;
+}
+
+.container-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'days hours minute second';
+    grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+    place-content: center;
+    place-items: center;
+    gap: 4rem;
+}
+
+.countdown li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inika', serif;
+    font-size: 10rem;
+    line-height: 10rem;
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+}
+
+.countdown li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -52px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.countdown li:hover::after {
+    opacity: 1;
+}
+
+.countdown span.subtitle {
+    display: block;
+    font-family: 'Ruluko', sans-serif;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.countdown .days {
+    grid-area: days;
+}
+
+.countdown .days:hover {
+    color: red;
+}
+
+.countdown .days::after {
+    background: url(../imgs/morcegos.svg);
+    background-repeat: no-repeat;
+}
+
+.countdown .hours {
+    grid-area: hours;
+}
+
+.countdown .hours:hover {
+    color: darkorange;
+}
+
+.countdown .hours::after {
+    background: url(../imgs/abobora.svg);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.countdown .minute {
+    grid-area: minute;
+}
+
+.countdown .minute:hover {
+    color: indigo;
+}
+
+.countdown .minute::after {
+    background: url(../imgs/bruxa.svg);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.countdown .second {
+    grid-area: second;
+}
+
+.countdown .second:hover {
+    color: chartreuse;
+}
+
+.countdown .second::after {
+    background: url(../imgs/zumbi.svg);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+    .countdown li {
+        font-size: 8rem;
+        line-height: 8rem;
+    }
+    .countdown {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .countdown li {
+        font-size: 6rem;
+        line-height: 6rem;
+    }
+
+    .countdown li:nth-child(1) {
+        font-size: 10rem;
+        line-height: 10rem;
+    }
+
+    .countdown {
+        grid-template-areas: 'days .' 'days hours' 'minute second';
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .countdown li {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .countdown li:nth-child(1) {
+        font-size: 10rem;
+        line-height: 10rem;
+    }
+
+    .countdown {
+        gap: .75rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .countdown li::after {
+        top: -65px;
+    }
+
+}
+
+@media (max-width: 319px) {
+    .countdown li {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .countdown li:nth-child(1) {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .countdown span.subtitle {
+        font-size: .8rem;
+        line-height: 1rem;
+    }
+
+    .countdown {
+        gap: .5rem;
+    }
+}

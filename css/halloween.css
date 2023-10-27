@@ -1,0 +1,118 @@
+.lThree,
+.rThree {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.rThree,
+.lThree,
+.moon,
+.moon::after,
+.moon::before {
+    transition: all 1s;
+}
+
+.lThree {
+    left: 0;
+    z-index: -1;
+}
+
+.rThree {
+    right: 0;
+}
+
+.moon {
+    position: absolute;
+    margin: auto;
+    top: .5rem;
+    left: 50%;
+    z-index: 0;
+    transform: scale(.5);
+    cursor: pointer;
+}
+
+.moon::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background-color: white;
+    top: -2px;
+    left: -2px;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.moon::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../imgs/ghost.svg);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.moon:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .rThree {
+        transform: translateX(10%);
+    }
+
+    .lThree {
+        transform: translateX(-10%);
+    }
+
+    .moon {
+        transform: scale(.8);
+    }
+}
+
+@media (max-width: 700px) {
+    .rThree {
+        transform: translateX(20%);
+    }
+
+    .lThree {
+        transform: translateX(-20%);
+    }
+
+    .moon {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .rThree {
+        transform: translateX(40%);
+    }
+
+    .lThree {
+        transform: translateX(-30%);
+    }
+    .moon {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 500px) {
+    .rThree {
+        transform: translateX(50%);
+    }
+
+    .lThree {
+        transform: translateX(-40%);
+    }
+    .moon {
+        transform: scale(1.4);
+    }
+}
