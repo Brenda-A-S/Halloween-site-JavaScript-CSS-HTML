@@ -1,5 +1,4 @@
-footer,
-.rThree  {
+footer  {
     z-index: 2;
 }
 
@@ -21,4 +20,13 @@ footer,
 
 body::after {
     z-index: -3;
+}
+
+@media (max-width:800px) {
+    .rThree{
+        z-index: 2;
+    }
+    .countdown {
+        z-index: 3;
+    }    
 }

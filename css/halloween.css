@@ -77,7 +77,7 @@
 
 @media (max-width: 700px) {
     .rThree {
-        transform: translateX(20%);
+        transform: translateX(30%);
     }
 
     .lThree {
@@ -91,7 +91,7 @@
 
 @media (max-width: 600px) {
     .rThree {
-        transform: translateX(40%);
+        transform: translateX(50%);
     }
 
     .lThree {
@@ -104,7 +104,7 @@
 
 @media (max-width: 500px) {
     .rThree {
-        transform: translateX(50%);
+        transform: translateX(80%);
     }
 
     .lThree {
