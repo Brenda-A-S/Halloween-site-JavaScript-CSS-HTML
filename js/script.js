@@ -1,6 +1,6 @@
 import Countdown from './modules/countdown.js'
 
-const halloweenTime = new Countdown('31 October 2023 00:00:00 GMT-0300')
+const halloweenTime = new Countdown('31 October 2024 00:00:00 GMT-0300')
 
 function updateCountdown() {
     const units = {
