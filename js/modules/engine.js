@@ -12,6 +12,7 @@ const values = {
     result: 0,
     currentTime: 60
 }
+
 const { gameVelocity } = values;
 let { hitPosition, result, currentTime } = values;
 
@@ -59,5 +60,3 @@ function verifyEnemy() {
 function initGame() {
     verifyEnemy();
 }
-
-initGame()
