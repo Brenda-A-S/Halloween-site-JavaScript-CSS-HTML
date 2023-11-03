@@ -10,7 +10,7 @@ footer  {
     z-index: 0;
 }
 
-.lThree{
+.lTree{
     z-index: -1;
 }
 
@@ -23,7 +23,7 @@ body::after {
 }
 
 @media (max-width:800px) {
-    .rThree{
+    .rTree{
         z-index: 2;
     }
     .countdown {

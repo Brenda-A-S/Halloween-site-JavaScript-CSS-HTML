@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halloween Countdown</title>
+    <title>Halloween Countdown | Halloween Time</title>
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="./imgs/global/pumpkin.svg" type="image/x-icon">
@@ -28,48 +28,60 @@
     <main class="grid">
         <nav class="menu-nav">
             <ul>
-                <li>
+                <li aria-label="Voltar ao início" title="Voltar ao início">
                     <a href="index.html" class="intern"> <img width="41" height="39" src="./imgs/global/home.svg"
-                            alt="Ícone casa"
-                            aria-label="Voltar ao início" data-tooltip></a>
+                            alt="Ícone casa"></a>
                 </li>
-                <li>
+                <li aria-label="Jogar" title="Jogar">
                     <a href="smashpumpkin.html" class="intern"> <img width="40" height="30" src="./imgs/global/game.svg"
-                            alt="Ícone abóbora"
-                            aria-label="Jogar" data-tooltip></a>
+                            alt="Ícone abóbora"></a>
                 </li>
-                <li>
+                <li aria-label="Contagem regressiva" title="Contagem regressiva">
                     <a href="countdown.html" class="intern"> <img width="40" height="41"
-                            src="./imgs/global/countdown.svg" alt="Ícone Relógio"
-                            aria-label="Contagem regressiva" data-tooltip></a>
+                            src="./imgs/global/countdown.svg" alt="Ícone Relógio"></a>
                 </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/brenda-antunes-silva/" target="_blank"><img width="36"
-                            height="37" src="./imgs/global/in.svg" alt="Ícone Linkedin"
-                            aria-label="Visitar Linkedin" data-tooltip></a>
+                <li aria-label="Visitar Linkedin" title="Visitar Linkedin">
+                    <a href="https://www.linkedin.com/in/brenda-antunes-silva/" target="_blank"> <img width="36"
+                            height="37" src="./imgs/global/in.svg" alt="Ícone Linkedin"></a>
                 </li>
-                <li>
+                <li aria-label="Visitar GitHub" title="Visitar GitHub">
                     <a href="https://github.com/Brenda-A-S" target="_blank"> <img width="40" height="40"
-                            src="./imgs/global/github.svg" alt="Ícone GitHub"
-                            aria-label="Visitar GitHub" data-tooltip></a>
+                            src="./imgs/global/github.svg" alt="Ícone GitHub"></a>
                 </li>
-                <li>
+                <li aria-label="Visitar Freepik" title="Visitar Freepik">
                     <a href="https://br.freepik.com/" target="_blank"> <img width="40" height="41"
-                            src="./imgs/global/info.svg" alt="Ícone Informação"
-                            aria-label="As imagens do site estão disponíveis no Freepik." data-tooltip></a>
+                            src="./imgs/global/info.svg" alt="Ícone Informação"></a>
                 </li>
             </ul>
         </nav>
-        <section class="content-home ">
-            <h1 class="title">
-                Feliz Halloween!
-            </h1>
-            <a href="smashpumpkin.html" class="btn-orange">Jogar</a>
+        <section class="content-countdown">
+            <div class="container-title">
+                <h1 class="title-b">Contagem regressiva</h1>
+            </div>
+            <div class="container-countdown">
+                <ul class="countdown">
+                    <li class="days">
+                        0
+                    </li>
+                    <li class="hours">
+                        0
+                    </li>
+                    <li class="minute">
+                        0
+                    </li>
+                    <li class="second">
+                        0
+                    </li>
+                </ul>
+            </div>
         </section>
         <footer class="footer">
             <a href="https://www.linkedin.com/in/brenda-antunes-silva/" target="_blank">DESIGNED BY BRENDA ANTUNES</a>
         </footer>
     </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/brenda-antunes-silva/" target="_blank">DESIGNED BY BRENDA ANTUNES</a>
+    </footer>
     <script type="module" src="js/script.js"></script>
 </body>
 

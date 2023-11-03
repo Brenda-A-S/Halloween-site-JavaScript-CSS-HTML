@@ -1,0 +1,45 @@
+.btn-orange {
+    background-color: var(--cor1);
+    width: max-content;
+    padding: .75rem 1.5rem;
+    border-radius: 2.3rem;
+    font-family: Ruluko;
+    font-size: 1.5rem;
+    color: var(--cor4);
+    margin: auto;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-orange:hover {
+    opacity: .8;
+    transform: scale(1.1);
+}
+
+.btn-orange:hover {
+    opacity: .8;
+    transform: translateY(1px);
+}
+
+.title-b {
+    font-size: 1.6rem;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+}
+
+@media (max-width:600px) {
+    .title-b {
+        font-size: 1.3rem;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 20;
+    background-color: var(--cor3);
+    padding: .5rem 1rem;
+    font-family: 'Ruluko', serif;
+    font-weight: normal;
+    border-radius: 1.5rem;
+    font-size: .75rem;
+}

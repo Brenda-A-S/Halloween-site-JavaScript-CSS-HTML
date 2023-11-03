@@ -1,0 +1,15 @@
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0.5rem 0;
+}
+
+.stat {
+    background-color: var(--cor3);
+    display: flex;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 30px;
+}

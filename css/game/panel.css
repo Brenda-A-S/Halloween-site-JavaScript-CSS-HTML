@@ -1,0 +1,25 @@
+.panel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.panel-row {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.panel .square {
+    background-color: var(--cor3);
+    width: 100%;
+    height: 100%;
+    border-radius: .2rem;
+}
+
+.panel .square.enemy{
+    background-color: aqua;
+}

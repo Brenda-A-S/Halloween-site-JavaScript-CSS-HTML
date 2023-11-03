@@ -1,5 +1,12 @@
-@import url(./global.css);
-@import url(./animation.css);
-@import url(./countdown.css);
-@import url(./halloween.css);
-@import url(./index.css);
+@import url(./global/global.css);
+@import url(./global/grid.css);
+@import url(./global/container.css);
+@import url(./global/components.css);
+@import url(./global/nav.css);
+@import url(./global/animation.css);
+@import url(./global/index.css);
+@import url(./home/home.css);
+@import url(./countdown/countdown.css);
+@import url(./scenario/halloween.css);
+@import url(./game/menu.css);
+@import url(./game/panel.css);

@@ -1,0 +1,22 @@
+.title {
+    font-size: 7rem;
+    font-weight: normal;
+}
+
+@media (max-width: 1070px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .title {
+        font-size: 3rem;
+    }
+}

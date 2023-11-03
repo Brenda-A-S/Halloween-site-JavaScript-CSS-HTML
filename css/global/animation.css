@@ -8,12 +8,13 @@
     }
 }
 
-.rThree,
-.lThree,
+.rTree,
+.lTree,
 .moon,
 main::before,
+.grid,
 .container-countdown {
-    animation: fade 3s;
+    animation: fade 1s;
 }
 
 @keyframes countdown-animation {
@@ -28,6 +29,10 @@ main::before,
     100% {
         transform: translateY(0);
     }
+}
+
+.title {
+    animation: countdown-animation 3s infinite alternate ease-in-out;
 }
 
 .container-countdown li {
