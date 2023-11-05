@@ -1,10 +1,12 @@
 import Countdown from './modules/countdown.js';
 import Tooltip from './modules/tooltip.js';
+import SmashGame from './modules/engine.js';
 
+Tooltip()
 
-if(window.location.pathname.includes('countdown')){
+if (window.location.pathname.includes('countdown')) {
     const halloweenTime = new Countdown('31 October 2024 00:00:00 GMT-0300')
-    
+
     function updateCountdown() {
         const units = {
             days: 'dia',
@@ -25,14 +27,17 @@ if(window.location.pathname.includes('countdown')){
         minutesElement.innerHTML = formatTime(halloweenTime.total.minutes, units.minutes)
         secondsElement.innerHTML = formatTime(halloweenTime.total.seconds, units.seconds)
     }
-    
+
     updateCountdown()
-    
+
     setInterval(updateCountdown, 1000)
 }
 
-if(window.location.pathname.includes('smashpumpkin')){
+    const squares = document.querySelectorAll('.square');
+    const enemy = document.querySelector('.enemy');
+    const time = document.querySelector('#time');
+    const score = document.querySelector('#score');
+    const btn = document.querySelector('#play');
+    const game = new SmashGame(squares, enemy, time, score, btn);
+    game.startGame();
 
-}
-
-Tooltip()

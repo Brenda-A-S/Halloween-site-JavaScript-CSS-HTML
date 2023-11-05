@@ -1,62 +1,78 @@
-const views = {
-    squares: document.querySelectorAll('.square'),
-    enemy: document.querySelector('.enemy'),
-    time: document.querySelector('#time'),
-    score: document.querySelector('#score')
-}
-const { squares, enemy, time, score } = views;
+export default class SmashGame {
+    constructor(squares, enemy, time, score, btnPlay) {
 
-const values = {
-    gameVelocity: 1000,
-    hitPosition: 0,
-    result: 0,
-    currentTime: 60
-}
+        this.squares = squares;
+        this.enemy = enemy;
+        this.time = time;
+        this.score = score;
+        this.btnPlay = btnPlay;
 
-const { gameVelocity } = values;
-let { hitPosition, result, currentTime } = values;
+        this.gameSpeed = 1000;
+        this.hitPosition = 0;
+        this.result = 0;
+        this.currentTime = 0;
 
-const action = {
-    timerId: setInterval(selectRandomSquare, gameVelocity),
-    countdownTimer: setInterval(countdown, gameVelocity)
-}
+        this.timerId;
+        this.countdownTimer;
+        this.gameRunning = false;
 
-let {timerId, countdownTimer} = action;
+        this.countdown = this.countdown.bind(this);
+        this.selectRandomSquare = this.selectRandomSquare.bind(this);
+        this.verifyEnemy = this.verifyEnemy.bind(this);
+        this.startGame = this.startGame.bind(this);
+    }
+    countdown() {
+        if (this.currentTime > 0) {
+            this.currentTime--;
+            this.time.textContent = this.currentTime;
+        }
+        if (this.currentTime <= 0) {
+            clearInterval(this.countdownTimer);
+            clearInterval(this.timerId);
+            clearInterval(this.timerId);
+            !this.verifyEnemy();
+            this.score.textContent = this.result;
+        }
+    }
+    selectRandomSquare() {
+        if (this.currentTime > 0) {
+            this.squares.forEach(square => square.classList.remove('enemy'));
+            let randomNum = Math.floor(Math.random() * 9);
+            this.hitPosition = randomNum;
+            this.squares[randomNum].classList.add('enemy');
+        }
+    }
+    verifyEnemy() {
+        if (this.gameRunning) {
+        }
 
-function countdown() {
-    currentTime--;
-    time.textContent = currentTime;
-    if(currentTime <= 0){
-        alert('game over, score: ' + result);
-        clearInterval(timerId, gameVelocity);
-        clearInterval(countdownTimer, gameVelocity);
-        score.textContent = result;
-        window.location.reload();
+        this.gameRunning = true;
+        this.squares.forEach(square => {
+            square.addEventListener('click', () => {
+                if (this.hitPosition === +square.id) {
+                    if (this.currentTime > 0) {
+                        this.result++;
+                    }
+                    this.score.textContent = this.result;
+                    this.hitPosition = null;
+                    this.selectRandomSquare();
+                    clearInterval(this.timerId);
+                    this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
+                }
+            });
+        });
+    }
+    
+    startGame() {
+        this.btnPlay.addEventListener('click', () => { 
+            this.verifyEnemy();
+            this.currentTime = 5;
+            this.score.textContent = 0;
+            this.result = 0;
+            clearInterval(this.timerId); // limpa intervalo remanescente do click
+            this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
+            this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
+        });
     }
 }
 
-function selectRandomSquare() {
-    squares.forEach(square => square.classList.remove('enemy'));
-    let randomNum = Math.floor(Math.random() * 9);
-    hitPosition = randomNum;
-    squares[randomNum].classList.add('enemy');
-}
-
-function verifyEnemy() {
-    squares.forEach(square => {
-        square.addEventListener('mousedown', () => {
-            if (hitPosition === +square.id) {
-                result++;
-                score.textContent = result;
-                hitPosition = null;
-                selectRandomSquare();
-                clearInterval(timerId);
-                timerId = setInterval(selectRandomSquare, gameVelocity);
-            }
-        });
-    });
-}
-
-function initGame() {
-    verifyEnemy();
-}
