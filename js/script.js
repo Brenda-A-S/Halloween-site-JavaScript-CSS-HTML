@@ -1,6 +1,7 @@
 import Countdown from './modules/countdown.js';
 import Tooltip from './modules/tooltip.js';
 import SmashGame from './modules/engine.js';
+import Modal from './modules/modal.js'
 
 Tooltip()
 
@@ -33,11 +34,24 @@ if (window.location.pathname.includes('countdown')) {
     setInterval(updateCountdown, 1000)
 }
 
-    const squares = document.querySelectorAll('.square');
-    const enemy = document.querySelector('.enemy');
-    const time = document.querySelector('#time');
-    const score = document.querySelector('#score');
-    const btn = document.querySelector('#play');
-    const game = new SmashGame(squares, enemy, time, score, btn);
-    game.startGame();
+if (window.location.pathname.includes('smashpumpkin')){
+const squares = document.querySelectorAll('.square');
+const enemy = document.querySelector('.enemy');
+const time = document.querySelector('#time');
+const score = document.querySelector('#score');
+const btn = document.querySelector('#play');
 
+const title = document.querySelector('#title');
+const text = document.querySelector('#text');
+
+const btnOpen = document.querySelector('#open');
+const btnClose = document.querySelector('#close');
+const btnPlay = document.querySelector('#modalPlay');
+const containerModal = document.querySelector('.container-modal');
+
+const modal = new Modal(btnOpen, btnClose, btnPlay, containerModal, title, text);
+const game = new SmashGame(squares, enemy, time, score, btn, modal);
+
+game.initGame();
+
+modal.initModal();}

@@ -66,11 +66,11 @@
             <div class="content-game">
                 <header class="menu">
                     <div class="menu-time stat">
-                        <h2>time</h2>
+                        <h2>Tempo</h2>
                         <h2 id="time">0</h2>
                     </div>
                     <div class="menu-score stat">
-                        <h2>score</h2>
+                        <h2>Pontuação</h2>
                         <h2 id="score">0</h2>
                     </div>
                 </header>
@@ -91,9 +91,21 @@
                         <div class="square" id="8"></div>
                     </div>
                 </section>
-                <footer class="panel">
-                    <button id="play">Play</button>
+                <footer class="footerPlay">
+                    <button id="play" class="btn-orange">Jogar!</button>
                 </footer>
+                <span class="container-modal active">
+                    <div class="modal">
+                        <button id="close">X</button>
+                        <h2 id="title">
+                            Como Jogar?
+                        </h2>
+                        <p id="text">
+                            Clique com o botão em cima da abóbora para esmagá-la e marcar pontos. A cada acerto, a sua pontuação aumenta.
+                        </p>
+                        <button class="btn-orange" id="modalPlay">Começar!</button>
+                    </div>
+                </span>
             </div>
         </section>
         <footer class="footer">

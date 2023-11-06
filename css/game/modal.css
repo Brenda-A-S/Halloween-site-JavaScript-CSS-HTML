@@ -1,0 +1,76 @@
+.container-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.container-modal.active {
+    display: flex;
+}
+
+.modal {
+    background-color: var(--cor4);
+    padding: 1.75rem;
+    max-width: 28rem;
+    border-radius: .3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.modal button#close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    background: var(--cor3);
+    padding: 0.75rem;
+    color: #fff;
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+.modal h2 {
+    padding: .75rem 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Ruluko", serif;
+}
+
+.modal p {
+    padding: .75rem 1.5rem;
+    width: 100%;
+    font-size: 1.25rem;
+    font-family: "Ruluko", sans-serif;
+}
+
+.modal .btn-orange {
+    font-size: 1.25rem;
+}
+
+@media (max-width:620px) {
+    .modal {
+        padding: 1rem;
+    }
+
+    .modal h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal p {
+        padding: .5rem;
+        font-size: 1rem;
+    }
+
+    .modal .btn-orange {
+        font-size: 1rem;
+    }
+}

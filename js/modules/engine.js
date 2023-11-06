@@ -1,11 +1,11 @@
 export default class SmashGame {
-    constructor(squares, enemy, time, score, btnPlay) {
-
+    constructor(squares, enemy, time, score, btn, modal) {
         this.squares = squares;
         this.enemy = enemy;
         this.time = time;
         this.score = score;
-        this.btnPlay = btnPlay;
+        this.btn = btn;
+        this.modal = modal;
 
         this.gameSpeed = 1000;
         this.hitPosition = 0;
@@ -19,7 +19,9 @@ export default class SmashGame {
         this.countdown = this.countdown.bind(this);
         this.selectRandomSquare = this.selectRandomSquare.bind(this);
         this.verifyEnemy = this.verifyEnemy.bind(this);
+        this.openResult = this.openResult.bind(this);
         this.startGame = this.startGame.bind(this);
+        this.initGame = this.initGame.bind(this);
     }
     countdown() {
         if (this.currentTime > 0) {
@@ -27,11 +29,13 @@ export default class SmashGame {
             this.time.textContent = this.currentTime;
         }
         if (this.currentTime <= 0) {
+            this.openResult();
             clearInterval(this.countdownTimer);
             clearInterval(this.timerId);
             clearInterval(this.timerId);
             !this.verifyEnemy();
             this.score.textContent = this.result;
+            this.gameRunning = false;
         }
     }
     selectRandomSquare() {
@@ -44,6 +48,7 @@ export default class SmashGame {
     }
     verifyEnemy() {
         if (this.gameRunning) {
+            return;
         }
 
         this.gameRunning = true;
@@ -62,17 +67,26 @@ export default class SmashGame {
             });
         });
     }
-    
+    openResult() {
+        this.modal.newHTMLModal("Fim de Jogo", this.result, 'Jogar Novamente!')
+        this.modal.container.classList.add('active')
+    }
     startGame() {
-        this.btnPlay.addEventListener('click', () => { 
-            this.verifyEnemy();
-            this.currentTime = 5;
-            this.score.textContent = 0;
-            this.result = 0;
-            clearInterval(this.timerId); // limpa intervalo remanescente do click
-            this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
-            this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
+        this.verifyEnemy();
+        this.currentTime = 10;
+        score.textContent = 0;
+        this.result = 0;
+        clearInterval(this.timerId);
+        this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
+        this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
+    }
+    initGame() {
+        this.btn.addEventListener('click', () => {
+            if (this.gameRunning) return
+            this.startGame();
         });
+        this.modal.btnPlay.addEventListener('click', () => {
+            this.startGame();
+        })
     }
 }
-

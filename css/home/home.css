@@ -18,5 +18,6 @@
 @media (max-width: 680px) {
     .title {
         font-size: 3rem;
+        text-align: center;
     }
 }
