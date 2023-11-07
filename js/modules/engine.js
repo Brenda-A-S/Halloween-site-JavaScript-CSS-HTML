@@ -68,7 +68,7 @@ export default class SmashGame {
         });
     }
     openResult() {
-        this.modal.newHTMLModal("Fim de Jogo", this.result, 'Jogar Novamente!')
+        this.modal.newHTMLModal("Fim de Jogo", 'Pontuação: ' + this.result, 'Jogar Novamente!')
         this.modal.container.classList.add('active')
     }
     startGame() {
