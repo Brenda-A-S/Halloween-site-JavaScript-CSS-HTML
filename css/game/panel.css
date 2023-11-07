@@ -21,12 +21,13 @@
 }
 
 .panel .square.enemy{
-    background: var(--cor3) url(../../imgs/global/pumpkin.svg) no-repeat center / contain;
+    background: var(--cor3) url(../../imgs/global/pumpkin.svg) no-repeat center;
     transition: .1s;
 }
 
 .panel .square.enemy:active{
-    opacity: .6;
+    opacity: .3;
+    background-color: var(--cor1);
 }
 
 @media (max-width: 600px) {

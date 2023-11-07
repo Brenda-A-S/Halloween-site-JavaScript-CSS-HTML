@@ -29,11 +29,12 @@
     top: -15px;
     right: -15px;
     border-radius: 50%;
-    background: var(--cor3);
+    background: var(--cor4);
     padding: 0.75rem;
     color: #fff;
     font-size: .5rem;
     cursor: pointer;
+    border: 1px solid var(--cor3);
 }
 
 .modal h2 {
