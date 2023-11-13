@@ -16,6 +16,8 @@ export default class SmashGame {
         this.countdownTimer;
         this.gameRunning = false;
 
+        this.clearIntervals = this.clearIntervals.bind(this);
+        this.resetCurrentInterval = this.resetCurrentInterval.bind(this);
         this.countdown = this.countdown.bind(this);
         this.selectRandomSquare = this.selectRandomSquare.bind(this);
         this.verifyEnemy = this.verifyEnemy.bind(this);
@@ -30,9 +32,7 @@ export default class SmashGame {
         }
         if (this.currentTime <= 0) {
             this.openResult();
-            clearInterval(this.countdownTimer);
-            clearInterval(this.timerId);
-            clearInterval(this.timerId);
+            this.clearIntervals();
             !this.verifyEnemy();
             this.score.textContent = this.result;
             this.gameRunning = false;
@@ -61,8 +61,7 @@ export default class SmashGame {
                     this.score.textContent = this.result;
                     this.hitPosition = null;
                     this.selectRandomSquare();
-                    clearInterval(this.timerId);
-                    this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
+                    this.resetCurrentInterval();
                 }
             });
         });
@@ -71,13 +70,21 @@ export default class SmashGame {
         this.modal.newHTMLModal("Fim de Jogo", 'Pontuação: ' + this.result, 'Jogar Novamente!')
         this.modal.container.classList.add('active')
     }
-    startGame() {
-        this.verifyEnemy();
-        this.currentTime = 10;
-        score.textContent = 0;
-        this.result = 0;
+    clearIntervals() {
+        clearInterval(this.countdownTimer);
+        clearInterval(this.timerId);
+        clearInterval(this.timerId);
+    }
+    resetCurrentInterval() {
         clearInterval(this.timerId);
         this.timerId = setInterval(this.selectRandomSquare, this.gameSpeed);
+    }
+    startGame() {
+        this.verifyEnemy();
+        this.currentTime = 15;
+        score.textContent = 0;
+        this.result = 0;
+        this.resetCurrentInterval();
         this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
     }
     initGame() {
