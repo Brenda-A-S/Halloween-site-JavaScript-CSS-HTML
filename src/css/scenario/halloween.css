@@ -54,7 +54,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url(../../imgs/scenario/ghost.svg);
+    background: url(../../assets/imgs/scenario/ghost.svg);
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;

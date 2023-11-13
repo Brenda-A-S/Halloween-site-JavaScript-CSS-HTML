@@ -60,7 +60,7 @@
 }
 
 .countdown .days::after {
-    background: url(../../imgs/countdown/bat.svg);
+    background: url(../../assets/imgs/countdown/bat.svg);
 }
 
 .countdown .hours {
@@ -72,7 +72,7 @@
 }
 
 .countdown .hours::after {
-    background: url(../../imgs/global/pumpkin.svg);
+    background: url(../../assets/imgs/global/pumpkin.svg);
 }
 
 .countdown .minute {
@@ -84,7 +84,7 @@
 }
 
 .countdown .minute::after {
-    background: url(../../imgs/countdown/witch.svg);
+    background: url(../../assets/imgs/countdown/witch.svg);
 }
 
 .countdown .second {
@@ -96,7 +96,7 @@
 }
 
 .countdown .second::after {
-    background: url(../../imgs/countdown/zombie.svg);
+    background: url(../../assets/imgs/countdown/zombie.svg);
 }
 
 .countdown .days::after,

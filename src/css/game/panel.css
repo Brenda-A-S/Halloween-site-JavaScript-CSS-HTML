@@ -21,7 +21,7 @@
 }
 
 .panel .square.enemy{
-    background: var(--cor3) url(../../imgs/global/pumpkin.svg) no-repeat center;
+    background: var(--cor3) url(../../assets/imgs/global/pumpkin.svg) no-repeat center;
     transition: .1s;
 }
 

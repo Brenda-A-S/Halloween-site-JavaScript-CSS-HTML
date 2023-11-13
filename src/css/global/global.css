@@ -30,7 +30,7 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../../imgs/scenario/stars.svg);
+    background: url(../../assets/imgs/scenario/stars.svg);
     width: 100%;
     height: 100%;
 }
