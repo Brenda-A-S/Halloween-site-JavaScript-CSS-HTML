@@ -36,6 +36,11 @@ Olá! Esse é o repositório do meu site de Halloween. Ele foi desenvolvido com 
 
 https://github.com/Brenda-A-S/Halloween-site-JavaScript-CSS-HTML/assets/69852246/8562110c-be5c-42d4-8b0c-0bc700f1ce69
 
+# Assets
+
+- As imagens utilizadas são disponibilizadas pelo Freepik, por diversos criadores. Confira no [link](https://br.freepik.com/colecao/halloween/5481132).
+- Os sons utilizados são oferecidos pelo criador UNIVERSFIELD, no Pixabay. Confira no [link](https://pixabay.com/pt/users/universfield-28281460/).
+
 # Conecte-se comigo 🔗
 
 * Me siga no [Instagram](https://www.instagram.com/brenda_a_s_dev/)
