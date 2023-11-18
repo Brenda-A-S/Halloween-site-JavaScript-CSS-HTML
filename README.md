@@ -12,17 +12,14 @@ Olá! Esse é o repositório do meu site de Halloween. Ele foi desenvolvido com 
 
 4- O jogo acaba quando o tempo acabar.
 
-# Tecnologias utilizadas 📂
+# Tecnologias e conceitos utilizados 📂
 
 - HTML
 - CSS
 - JavaScript
-
-# Conceitos utlizados 📚
-
-- Classes: Classe MemoryGame representando um objeto de jogo da memória com suas propriedades e métodos.
-- Encapsulamento: Dentro da classe temos toda a parte lógica por traz do jogo.
-- Manipulação de DOM: Elementos de cartas criados dinâmicamente com JavaScript, além de eventos de clique adicionados.
+- Classes
+- Encapsulamento
+- Manipulação de DOM
 
 # Telas Capturadas e vídeo 📷
 
