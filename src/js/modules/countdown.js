@@ -56,11 +56,11 @@ export default class Countdown {
         this.updateTimer = setInterval(this.buildCountdown, 1000)
     }
     buildCountdown() {
-        this.countdown.forEach((unit, index) => {
-            const numero = this.total[index]
-            let uniter = this.units[index]
-            numero === 1 ? uniter = uniter.replace(/s$/, '') : uniter
-            unit.innerHTML = `${numero} <span class="subtitle">${uniter}</span> `
+        this.countdown.forEach((item, index) => {
+            const number = this.total[index];
+            let unit = this.units[index];
+            number === 1 ? unit = unit.replace(/s$/, '') : unit;
+            item.innerHTML = `${number} <span class="subtitle">${unit}</span> `;
         })
     }
     init() {
