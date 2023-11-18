@@ -3,7 +3,8 @@ import Tooltip from './modules/tooltip.js';
 import SmashGame from './modules/engine.js';
 import Modal from './modules/modal.js';
 
-Tooltip();
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
 
 const halloweenTime = new Countdown('31 October 2024 00:00:00 GMT-0300');
 halloweenTime.init();
