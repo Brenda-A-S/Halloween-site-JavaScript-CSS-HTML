@@ -31,14 +31,12 @@ export default class Modal {
         if (this.btnOpen) {
             this.btnOpen.addEventListener('click', this.eventToggleModal);
         }
-        if (this.btnClose && this.containerModal) {
-            this.btnClose.addEventListener('click', this.eventToggleModal);
-            this.btnPlay.addEventListener('click', this.eventToggleModal);
-            this.containerModal.addEventListener('click', this.outsideClick);
-        }
+        this.btnClose.addEventListener('click', this.eventToggleModal);
+        this.btnPlay.addEventListener('click', this.eventToggleModal);
+        this.containerModal.addEventListener('click', this.outsideClick);
     }
     init() {
-        if (this.containerModal && this.btnClose && this.btnOpen && this.btnPlay) this.addModalEvents();
+        if (this.containerModal && this.btnClose && this.btnPlay) { this.addModalEvents(); }
         return this;
     }
 }
