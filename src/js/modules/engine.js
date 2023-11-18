@@ -42,12 +42,15 @@ export default class SmashGame {
             this.time.textContent = this.currentTime;
         }
         if (this.currentTime <= 0) {
-            this.openResult();
-            this.clearIntervals();
-            !this.verifyEnemy();
-            this.score.textContent = this.result;
-            this.gameRunning = false;
+            this.endGame();
         }
+    }
+    endGame() {
+        this.openResult();
+        this.clearIntervals();
+        this.removeEnemyEvent();
+        this.score.textContent = this.result;
+        this.gameRunning = false;
     }
     selectRandomSquare() {
         if (this.currentTime > 0) {
