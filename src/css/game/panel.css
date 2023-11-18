@@ -27,7 +27,6 @@
 
 .panel .square.enemy:active{
     opacity: .3;
-    background-color: var(--cor1);
 }
 
 @media (max-width: 600px) {
