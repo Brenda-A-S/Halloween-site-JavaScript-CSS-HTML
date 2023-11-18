@@ -41,10 +41,10 @@ export default class Countdown {
         ]
     }
     get units() {
-        const days = 'dia';
-        const hours = 'hora';
-        const minutes = 'minuto';
-        const seconds = 'segundo';
+        const days = 'dias';
+        const hours = 'horas';
+        const minutes = 'minutos';
+        const seconds = 'segundos';
         return [
             days,
             hours,
@@ -52,20 +52,18 @@ export default class Countdown {
             seconds,
         ]
     }
-    formatTime(number, unit) {
-        const unitString = number === 1 ? unit : unit + 's'
-        return `${number} <span class="subtitle">${unitString}</span>`
-    }
     updateCountdown() {
         this.updateTimer = setInterval(this.buildCountdown, 1000)
     }
     buildCountdown() {
         this.countdown.forEach((unit, index) => {
-            unit.innerHTML = this.total[index] && this.formatTime(this.total[index], this.units[index])
+            const numero = this.total[index]
+            let uniter = this.units[index]
+            numero === 1 ? uniter = uniter.replace(/s$/, '') : uniter
+            unit.innerHTML = `${numero} <span class="subtitle">${uniter}</span> ` 
         })
     }
     init() {
-        this.buildCountdown();
         this.updateCountdown();
     }
 
