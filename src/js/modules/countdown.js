@@ -2,10 +2,7 @@ export default class Countdown {
     constructor(futureDate) {
         this.futureDate = futureDate;
 
-        this.daysElement = document.querySelector('.days');
-        this.hoursElement = document.querySelector('.hours');
-        this.minutesElement = document.querySelector('.minute');
-        this.secondsElement = document.querySelector('.second');
+        this.countdown = document.querySelectorAll('.countdown li');
 
         this.updateTimer;
         this.buildCountdown = this.buildCountdown.bind(this)
@@ -36,12 +33,24 @@ export default class Countdown {
         const hours = this.hours % 24;
         const minutes = this.minutes % 60;
         const seconds = this.seconds % 60;
-        if (this.futureDate) return {
+        return [
             days,
             hours,
             minutes,
             seconds,
-        }
+        ]
+    }
+    get units() {
+        const days = 'dia';
+        const hours = 'hora';
+        const minutes = 'minuto';
+        const seconds = 'segundo';
+        return [
+            days,
+            hours,
+            minutes,
+            seconds,
+        ]
     }
     formatTime(number, unit) {
         const unitString = number === 1 ? unit : unit + 's'
@@ -51,12 +60,12 @@ export default class Countdown {
         this.updateTimer = setInterval(this.buildCountdown, 1000)
     }
     buildCountdown() {
-        this.daysElement.innerHTML = this.total.days;
-        this.hoursElement.innerHTML = this.total.hours;
-        this.minutesElement.innerHTML = this.total.minutes;
-        this.secondsElement.innerHTML = this.total.seconds;
+        this.countdown.forEach((unit, index) => {
+            unit.innerHTML = this.total[index] && this.formatTime(this.total[index], this.units[index])
+        })
     }
     init() {
+        this.buildCountdown();
         this.updateCountdown();
     }
 
