@@ -60,11 +60,14 @@ export default class Countdown {
             const numero = this.total[index]
             let uniter = this.units[index]
             numero === 1 ? uniter = uniter.replace(/s$/, '') : uniter
-            unit.innerHTML = `${numero} <span class="subtitle">${uniter}</span> ` 
+            unit.innerHTML = `${numero} <span class="subtitle">${uniter}</span> `
         })
     }
     init() {
-        this.updateCountdown();
+        if (this.futureDate) {
+            this.buildCountdown();
+            this.updateCountdown();
+        }
+        return this;
     }
-
 }
