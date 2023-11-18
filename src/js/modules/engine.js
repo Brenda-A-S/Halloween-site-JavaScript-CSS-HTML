@@ -49,13 +49,17 @@ export default class SmashGame {
         if (this.modal) this.openResult();
         this.clearIntervals();
         this.removeEnemyEvent();
+        this.removeEnemy();
         this.score.textContent = this.result;
         this.gameRunning = false;
+    }
+    removeEnemy() {
+        this.squares.forEach(square => square.classList.remove('enemy'));
     }
     selectRandomSquare() {
         if (this.currentTime > 0) {
             this.hitPosition = null;
-            this.squares.forEach(square => square.classList.remove('enemy'));
+            this.removeEnemy();
             let randomNum = Math.floor(Math.random() * 9);
             this.hitPosition = randomNum;
             this.squares[randomNum].classList.add('enemy');
