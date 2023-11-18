@@ -14,7 +14,7 @@ export default class SmashGame {
 
         this.timerId;
         this.countdownTimer;
-        this.gameRunning = false;
+        this.gameRunning;
 
         this.countdown = this.countdown.bind(this);
         this.selectRandomSquare = this.selectRandomSquare.bind(this);
@@ -58,7 +58,6 @@ export default class SmashGame {
     }
     selectRandomSquare() {
         if (this.currentTime > 0) {
-            this.hitPosition = null;
             this.removeEnemy();
             let randomNum = Math.floor(Math.random() * 9);
             this.hitPosition = randomNum;
@@ -80,11 +79,14 @@ export default class SmashGame {
         });
     }
     verifyEnemy(square) {
+        if (!this.gameRunning) return;
+
         if (this.hitPosition === +square.id) {
             if (this.currentTime > 0) {
                 this.playSound('punch');
                 this.result++;
             }
+            this.hitPosition = null;
             this.score.textContent = this.result;
             this.selectRandomSquare();
             this.resetCurrentInterval();
