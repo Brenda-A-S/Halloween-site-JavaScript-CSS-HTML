@@ -1,6 +1,14 @@
 export default class Countdown {
     constructor(futureDate) {
-        this.futureDate = futureDate
+        this.futureDate = futureDate;
+
+        this.daysElement = document.querySelector('.days');
+        this.hoursElement = document.querySelector('.hours');
+        this.minutesElement = document.querySelector('.minute');
+        this.secondsElement = document.querySelector('.second');
+
+        this.updateTimer;
+        this.buildCountdown = this.buildCountdown.bind(this)
     }
     get _actualDate() {
         return new Date()
@@ -28,11 +36,28 @@ export default class Countdown {
         const hours = this.hours % 24;
         const minutes = this.minutes % 60;
         const seconds = this.seconds % 60;
-        return {
+        if (this.futureDate) return {
             days,
             hours,
             minutes,
             seconds,
         }
     }
+    formatTime(number, unit) {
+        const unitString = number === 1 ? unit : unit + 's'
+        return `${number} <span class="subtitle">${unitString}</span>`
+    }
+    updateCountdown() {
+        this.updateTimer = setInterval(this.buildCountdown, 1000)
+    }
+    buildCountdown() {
+        this.daysElement.innerHTML = this.total.days;
+        this.hoursElement.innerHTML = this.total.hours;
+        this.minutesElement.innerHTML = this.total.minutes;
+        this.secondsElement.innerHTML = this.total.seconds;
+    }
+    init() {
+        this.updateCountdown();
+    }
+
 }
