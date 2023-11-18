@@ -51,6 +51,7 @@ export default class SmashGame {
     }
     selectRandomSquare() {
         if (this.currentTime > 0) {
+            this.hitPosition = null;
             this.squares.forEach(square => square.classList.remove('enemy'));
             let randomNum = Math.floor(Math.random() * 9);
             this.hitPosition = randomNum;
