@@ -34,16 +34,14 @@ if (window.location.pathname.includes('countdown')) {
     setInterval(updateCountdown, 1000)
 }
 
-if (window.location.pathname.includes('smashpumpkin')) {
-    const btnOpen = document.querySelector('#open');
-    const btnClose = document.querySelector('#close');
-    const btnPlay = document.querySelector('#modalPlay');
-    const containerModal = document.querySelector('.container-modal');
+const btnOpen = document.querySelector('#open');
+const btnClose = document.querySelector('#close');
+const btnPlay = document.querySelector('#modalPlay');
+const containerModal = document.querySelector('.container-modal');
 
-    const modal = new Modal(btnOpen, btnClose, btnPlay, containerModal, title, text);
-    const game = new SmashGame('.square', '.enemy', '#time', '#score', '#play', modal);
+const modal = new Modal(btnOpen, btnClose, btnPlay, containerModal, title, text);
+const game = new SmashGame('.square', '.enemy', '#time', '#score', '#play');
 
-    game.init();
+game.init();
 
-    modal.initModal();
-}
+modal.initModal();

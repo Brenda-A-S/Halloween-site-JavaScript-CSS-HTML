@@ -46,7 +46,7 @@ export default class SmashGame {
         }
     }
     endGame() {
-        this.openResult();
+        if (this.modal) this.openResult();
         this.clearIntervals();
         this.removeEnemyEvent();
         this.score.textContent = this.result;
@@ -106,13 +106,15 @@ export default class SmashGame {
             if (this.gameRunning) return
             this.startGame();
         });
-        this.modal.btnPlay.addEventListener('click', () => {
-            if (this.gameRunning) return
-            this.startGame();
-        });
+        if (this.modal) {
+            this.modal.btnPlay.addEventListener('click', () => {
+                if (this.gameRunning) return
+                this.startGame();
+            });
+        }
     }
     init() {
-        this.addGameEvents();
+        if (this.squares && this.enemy && this.time && this.score) this.addGameEvents();
         return this;
     }
 }
