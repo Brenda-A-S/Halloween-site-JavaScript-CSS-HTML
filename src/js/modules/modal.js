@@ -11,9 +11,17 @@ export default class Modal {
         this.eventToggleModal = this.eventToggleModal.bind(this);
         this.outsideClick = this.outsideClick.bind(this);
     }
-    toggleModal(event) {
+    toggleModal() {
+        this.containerModal.classList.toggle('active');
+    }
+    eventToggleModal(event) {
         event.preventDefault();
-        this.container.classList.toggle('active');
+        this.toggleModal();
+    }
+    outsideClick(event) {
+        if (event.target === this.containerModal) {
+            this.toggleModal();
+        }
     }
     newHTMLModal(newTitle, newText, newBtn) {
         this.title.textContent = newTitle;
