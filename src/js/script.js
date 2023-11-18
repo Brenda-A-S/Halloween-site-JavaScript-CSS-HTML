@@ -43,7 +43,7 @@ if (window.location.pathname.includes('smashpumpkin')) {
     const modal = new Modal(btnOpen, btnClose, btnPlay, containerModal, title, text);
     const game = new SmashGame('.square', '.enemy', '#time', '#score', '#play', modal);
 
-    game.initGame();
+    game.init();
 
     modal.initModal();
 }

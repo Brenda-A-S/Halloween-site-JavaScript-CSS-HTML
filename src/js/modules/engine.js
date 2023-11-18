@@ -16,15 +16,11 @@ export default class SmashGame {
         this.countdownTimer;
         this.gameRunning = false;
 
-        this.clearIntervals = this.clearIntervals.bind(this);
-        this.resetCurrentInterval = this.resetCurrentInterval.bind(this);
-        this.playSound = this.playSound.bind(this);
         this.countdown = this.countdown.bind(this);
         this.selectRandomSquare = this.selectRandomSquare.bind(this);
-        this.verifyEnemy = this.verifyEnemy.bind(this);
-        this.openResult = this.openResult.bind(this);
+
         this.startGame = this.startGame.bind(this);
-        this.initGame = this.initGame.bind(this);
+        this.addGameEvents = this.addGameEvents.bind(this);
     }
     clearIntervals() {
         clearInterval(this.countdownTimer);
@@ -61,14 +57,14 @@ export default class SmashGame {
             this.squares[randomNum].classList.add('enemy');
         }
     }
-    verifyEnemy() {        
+    verifyEnemy() {
         if (this.gameRunning) {
             return;
         }
 
         this.gameRunning = true;
         this.squares.forEach(square => {
-            square.addEventListener('click', () => {                
+            square.addEventListener('click', () => {
                 if (this.hitPosition === +square.id) {
                     this.playSound('punch');
                     if (this.currentTime > 0) {
@@ -95,13 +91,18 @@ export default class SmashGame {
         this.resetCurrentInterval();
         this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
     }
-    initGame() {
+    addGameEvents() {
         this.btn.addEventListener('click', () => {
             if (this.gameRunning) return
             this.startGame();
         });
         this.modal.btnPlay.addEventListener('click', () => {
+            if (this.gameRunning) return
             this.startGame();
-        })
+        });
+    }
+    init() {
+        this.addGameEvents();
+        return this;
     }
 }
