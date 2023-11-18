@@ -62,11 +62,6 @@ export default class SmashGame {
         }
     }
     addEnemyEvent() {
-        if (this.gameRunning) {
-            return;
-        }
-
-        this.gameRunning = true;
         this.squares.forEach(square => {
             square.addEventListener('click', () => {
                 this.verifyEnemy(square);
@@ -74,7 +69,6 @@ export default class SmashGame {
         });
     }
     removeEnemyEvent() {
-        this.gameRunning = true;
         this.squares.forEach(square => {
             square.removeEventListener('click', () => {
                 this.verifyEnemy(square);
@@ -100,10 +94,12 @@ export default class SmashGame {
         this.playSound('time');
         this.addEnemyEvent();
         this.currentTime = 15;
+        this.time.textContent = this.currentTime;
         this.score.textContent = 0;
         this.result = 0;
         this.resetCurrentInterval();
         this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
+        this.gameRunning = true;
     }
     addGameEvents() {
         this.btn.addEventListener('click', () => {
