@@ -79,14 +79,14 @@ export default class SmashGame {
         });
     }
     openResult() {
-        this.modal.newHTMLModal("Fim de Jogo", 'Pontuação: ' + this.result, 'Jogar Novamente!')
-        this.modal.container.classList.add('active')
+        this.modal.newHTMLModal('Fim de jogo!', `Sua pontuação foi de: ${this.result}`, 'Jogar novamente!');
+        this.modal.containerModal.classList.add('active');
     }
     startGame() {
         this.playSound('time');
-        this.verifyEnemy();
+        this.addEnemyEvent();
         this.currentTime = 15;
-        score.textContent = 0;
+        this.score.textContent = 0;
         this.result = 0;
         this.resetCurrentInterval();
         this.countdownTimer = setInterval(this.countdown, this.gameSpeed);
