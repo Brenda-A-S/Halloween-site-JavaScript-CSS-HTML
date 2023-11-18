@@ -34,9 +34,8 @@ if (window.location.pathname.includes('countdown')) {
     setInterval(updateCountdown, 1000)
 }
 
-const modal = new Modal(btnOpen, btnClose, btnPlay, containerModal, title, text);
+const modal = new Modal('#open', '#close', '#modalPlay', '.container-modal', '#title', '#text');
 const game = new SmashGame('.square', '.enemy', '#time', '#score', '#play', modal);
 
 game.init();
-
-modal.initModal();
+modal.init();
