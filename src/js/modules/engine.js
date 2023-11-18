@@ -57,7 +57,7 @@ export default class SmashGame {
             this.squares[randomNum].classList.add('enemy');
         }
     }
-    verifyEnemy() {
+    addEnemyEvent() {
         if (this.gameRunning) {
             return;
         }
@@ -65,18 +65,28 @@ export default class SmashGame {
         this.gameRunning = true;
         this.squares.forEach(square => {
             square.addEventListener('click', () => {
-                if (this.hitPosition === +square.id) {
-                    this.playSound('punch');
-                    if (this.currentTime > 0) {
-                        this.result++;
-                    }
-                    this.score.textContent = this.result;
-                    this.hitPosition = null;
-                    this.selectRandomSquare();
-                    this.resetCurrentInterval();
-                }
+                this.verifyEnemy(square);
             });
         });
+    }
+    removeEnemyEvent() {
+        this.gameRunning = true;
+        this.squares.forEach(square => {
+            square.removeEventListener('click', () => {
+                this.verifyEnemy(square);
+            });
+        });
+    }
+    verifyEnemy(square) {
+        if (this.hitPosition === +square.id) {
+            if (this.currentTime > 0) {
+                this.playSound('punch');
+                this.result++;
+            }
+            this.score.textContent = this.result;
+            this.selectRandomSquare();
+            this.resetCurrentInterval();
+        }
     }
     openResult() {
         this.modal.newHTMLModal('Fim de jogo!', `Sua pontuação foi de: ${this.result}`, 'Jogar novamente!');
