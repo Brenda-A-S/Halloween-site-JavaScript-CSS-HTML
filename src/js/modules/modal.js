@@ -8,7 +8,6 @@ export default class Modal {
         this.text = document.querySelector(text);
 
         this.eventToggleModal = this.eventToggleModal.bind(this);
-        this.outsideClick = this.outsideClick.bind(this);
     }
     toggleModal() {
         this.containerModal.classList.toggle('active');
@@ -16,11 +15,6 @@ export default class Modal {
     eventToggleModal(event) {
         event.preventDefault();
         this.toggleModal();
-    }
-    outsideClick(event) {
-        if (event.target === this.containerModal) {
-            this.toggleModal();
-        }
     }
     newHTMLModal(newTitle, newText, newBtn) {
         this.title.textContent = newTitle;
@@ -33,7 +27,6 @@ export default class Modal {
         }
         this.btnClose.addEventListener('click', this.eventToggleModal);
         this.btnPlay.addEventListener('click', this.eventToggleModal);
-        this.containerModal.addEventListener('click', this.outsideClick);
     }
     init() {
         if (this.containerModal && this.btnClose && this.btnPlay) { this.addModalEvents(); }
