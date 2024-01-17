@@ -11,9 +11,11 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
+
+    position: relative;
 }
 
-footer a:hover {
+.footer a:hover {
     color: #ff0000;
     opacity: .6;
 }
