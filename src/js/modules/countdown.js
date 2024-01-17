@@ -53,7 +53,7 @@ export default class Countdown {
         ]
     }
     updateCountdown() {
-        this.updateTimer = setInterval(this.buildCountdown, 1000)
+        this.updateTimer = setInterval(this.buildCountdown, 1000);
     }
     buildCountdown() {
         this.countdown.forEach((item, index) => {
