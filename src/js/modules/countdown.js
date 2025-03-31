@@ -56,12 +56,23 @@ export default class Countdown {
         this.updateTimer = setInterval(this.buildCountdown, 1000);
     }
     buildCountdown() {
-        this.countdown.forEach((item, index) => {
-            const number = this.total[index];
-            let unit = this.units[index];
-            number === 1 ? unit = unit.replace(/s$/, '') : unit;
-            item.innerHTML = `${number} <span class="subtitle">${unit}</span> `;
-        })
+        if (this._timeStampDiff <= 0) {
+            this.incrementYear();
+        } else {
+            this.countdown.forEach((item, index) => {
+                const number = this.total[index];
+                let unit = this.units[index];
+                number === 1 ? unit = unit.replace(/s$/, '') : unit;
+                item.innerHTML = `${number} <span class="subtitle">${unit}</span> `;
+            })
+        }
+    }
+    incrementYear() {
+        const currentDate = new Date(this.futureDate);
+        currentDate.setFullYear(currentDate.getFullYear() + 1);
+        this.futureDate = currentDate.toISOString();
+
+        this.buildCountdown();
     }
     init() {
         if (this.futureDate) {
